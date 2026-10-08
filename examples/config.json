@@ -1,0 +1,24 @@
+{
+  "name": "demo-system",
+  "utcOffsetHours": 3,
+  "dataDir": "data",
+  "reportsDir": "reports",
+  "registerFile": "decisions.md",
+  "symbols": ["ALPHA", "BETA", "GAMMA"],
+  "sources": {
+    "actual": "actual_events.csv",
+    "expected": "expected_events.csv",
+    "heartbeat": "heartbeat.csv",
+    "runtimeConfig": "runtime_config.csv",
+    "equity": "equity.csv",
+    "statePattern": "state_{symbol}.csv"
+  },
+  "reconcile": { "toleranceMinutes": 45, "maxResultDivergence": 0.5 },
+  "health": { "maxHeartbeatGapMinutes": 30, "maxStateAgeMinutes": 90, "closedWeekdays": [0, 6] },
+  "thresholds": { "dailyLossWarnPct": -3, "dailyLossBlockPct": -5 },
+  "expectedConfig": {
+    "ALPHA": { "mode": "replace", "rr": "5.0", "build": "1004" },
+    "BETA": { "mode": "replace", "rr": "5.0", "build": "1004" },
+    "GAMMA": { "mode": "replace", "rr": "5.0", "build": "1004" }
+  }
+}

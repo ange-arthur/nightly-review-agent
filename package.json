@@ -1,0 +1,34 @@
+{
+  "name": "nightly-review-agent",
+  "version": "1.0.0",
+  "description": "Scheduled review agent: reconciles what an automated system was expected to do with what it actually did, checks its health and configuration, and writes a Markdown report with three-level incidents and a persistent decision register.",
+  "main": "dist/agent.js",
+  "scripts": {
+    "demo": "node src/cli.ts --config examples/config.json --date 2026-10-06 --now \"2026-10-07 06:15\" --dry-run",
+    "test": "node --test \"src/**/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "start": "node src/cli.ts"
+  },
+  "keywords": [
+    "agent",
+    "monitoring",
+    "reconciliation",
+    "report",
+    "typescript"
+  ],
+  "author": "Ange Arthur Adoua",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  },
+  "types": "dist/agent.d.ts",
+  "bin": {
+    "nightly-review": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
