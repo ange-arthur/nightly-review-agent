@@ -114,6 +114,15 @@ npm run typecheck   # strict TypeScript, erasable syntax only (runs under Node's
 npm run build       # emits dist/ for environments that cannot run .ts directly
 ```
 
+## How this was built
+
+I designed the production agent this repository generalises and have run it nightly since
+September 2026. This public version was produced with Claude Code working under my direction: I set
+the scope (what to keep, what to strip), the architecture (isolated checks, three-level protocol,
+append-only register), reviewed every module and test, and validated the example report against what
+the production agent produces. The commits carry the AI co-author trailer on purpose: directing coding
+agents and owning the result is the workflow this project demonstrates.
+
 ## License
 
 MIT
